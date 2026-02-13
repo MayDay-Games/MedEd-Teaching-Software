@@ -1,5 +1,13 @@
 [gd_scene format=3 uid="uid://k58tkydg4840"]
 
+[ext_resource type="Script" uid="uid://b7b5cl8g40ije" path="res://MainMenu/module_select_screen.gd" id="1_154qa"]
+[ext_resource type="Theme" uid="uid://04xs332te4c" path="res://DesignElements/Themes/DefaultTheme.tres" id="1_ggudv"]
+[ext_resource type="PackedScene" uid="uid://dqf653jpra3wy" path="res://MainMenu/module_panel.tscn" id="3_0cqao"]
+[ext_resource type="PackedScene" uid="uid://ef6yrqwbt0mr" path="res://MainMenu/settings_menu.tscn" id="3_hc2ei"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_154qa"]
+bg_color = Color(0.07459732, 0.116467334, 0.17768139, 1)
+
 [node name="ModuleSelectScreen" type="Control" unique_id=1991792605]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +15,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ggudv")
+script = ExtResource("1_154qa")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=845956074]
 layout_mode = 1
@@ -27,21 +37,30 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=791851314]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1420828115]
+layout_mode = 2
+
+[node name="WelcomeLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=791851314]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 16
 text = "Welcome XYZ"
 fit_content = true
 scroll_active = false
 vertical_alignment = 1
 
+[node name="LogoutButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1742966252]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Logout"
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=758347749]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=361775494]
+[node name="EscButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=361775494]
 layout_mode = 2
-text = "Settings"
+text = "Esc"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=1334477250]
 layout_mode = 2
@@ -49,18 +68,73 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/CenterContainer" unique_id=2116233126]
-custom_minimum_size = Vector2(800, 500)
+custom_minimum_size = Vector2(820, 500)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ItemList" type="ItemList" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer" unique_id=1352830561]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer" unique_id=257949728]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-max_columns = 2
-same_column_width = true
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2110327389]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer" unique_id=782752004]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="OddVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1484994901]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="ModulePanel" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=394583697 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="ModulePanel3" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=1320327900 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="ModulePanel4" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=117101666 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="ModulePanel5" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=1703066702 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="ModulePanel6" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=1227127977 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="ModulePanel7" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=1531618473 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="EvenVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1565269520]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="ModulePanel" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=277646269 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="ModulePanel2" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=1687690640 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="ModulePanel3" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=495814778 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="ModulePanel4" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=1712075727 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="ModulePanel5" parent="MarginContainer/VBoxContainer/CenterContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=149888721 instance=ExtResource("3_0cqao")]
+layout_mode = 2
+
+[node name="SettingsMenu" parent="MarginContainer/VBoxContainer/CenterContainer" unique_id=219315174 instance=ExtResource("3_hc2ei")]
+visible = false
+layout_mode = 2
+
+[node name="LabelContainer" type="CenterContainer" parent="." unique_id=2110327389]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 1
 anchors_preset = 10
@@ -68,11 +142,74 @@ anchor_right = 1.0
 offset_bottom = 45.0
 grow_horizontal = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CenterContainer" unique_id=1979535040]
+[node name="RichTextLabel2" type="RichTextLabel" parent="LabelContainer" unique_id=1979535040]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "MedEd"
 fit_content = true
 autowrap_mode = 0
+
+[node name="EscMenuCont" type="Panel" parent="." unique_id=1947414587]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -220.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_154qa")
+
+[node name="MarginContainer" type="MarginContainer" parent="EscMenuCont" unique_id=1628648782]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EscMenuCont/MarginContainer" unique_id=507588862]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SettingsButton" type="Button" parent="EscMenuCont/MarginContainer/VBoxContainer" unique_id=881126360]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitB" type="Button" parent="EscMenuCont/MarginContainer/VBoxContainer" unique_id=2100629532]
+layout_mode = 2
+text = "Exit"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1324331444]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="StartB" type="Button" parent="MarginContainer2" unique_id=1650814051]
+layout_mode = 2
+text = ">"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/LogoutButton" to="." method="_on_logout_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/EscButton" to="." method="_on_esc_button_pressed"]
+[connection signal="pressed" from="EscMenuCont/MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

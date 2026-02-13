@@ -24,6 +24,10 @@ config/icon="res://icon.svg"
 ProfileController="*res://Saves and Profiles/profile_controller.tscn"
 ContentController="*uid://c0spse4ko37ka"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

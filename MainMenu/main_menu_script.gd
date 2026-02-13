@@ -8,7 +8,7 @@ extends Control
 @onready var warning_text = $WarningPop/Panel/WarningText
 
 
-@onready var Module_Scene = "res://Saves and Profiles/profile_screen.tscn"
+@onready var Module_Scene = "res://MainMenu/module_select_screen.tscn"
 
 var selected_profile = ""
 var profile_list = []
@@ -16,6 +16,7 @@ var profile_list = []
 
 func _ready() -> void:
 	ProfileController.connect("profile_list_changed", _profile_list_changed)
+	ProfileController.connect("profile_changed", _profile_loaded)
 	exit_conf_pop.hide()
 	login_pop.hide()
 	new_profile_pop.hide()
@@ -28,7 +29,12 @@ func _profile_list_changed() -> void:
 	profile_list_cont.clear()
 	var temp_list = ProfileController.profile_list.duplicate()
 	for i in temp_list:
-		profile_list_cont.add_item(i)
+		if i != "Guest":
+			profile_list_cont.add_item(i)
+		
+
+func _profile_loaded() ->void:
+	get_tree().change_scene_to_file(Module_Scene)
 
 
 func _on_exit_pressed() -> void:
@@ -76,7 +82,7 @@ func _on_profile_list_item_activated(index: int) -> void:
 	
 func start():
 	ProfileController.call_deferred("_set_profile", selected_profile)
-	get_tree().change_scene_to_file(Module_Scene)
+	
 	
 
 func _on_create_cancel_pressed() -> void:

@@ -7,10 +7,10 @@ enum user_types {
 	STAbove
 }
 
-var active_profile = "Guest"
+var active_profile = ""
 var profile_config = ConfigFile.new()
 var profile_folder_dir = "user://profiles"
-var profile_list = ["Guest"]
+var profile_list = []
 
 var user_data = {
 	"user_type" : 0
@@ -66,7 +66,7 @@ func _load_profile_folder() -> void:
 				print("Found directory: " + file_name)
 			else:
 				#print("Found file: " + file_name)
-				var temp_name = file_name.rstrip(".cfg")
+				var temp_name = file_name.trim_suffix(".cfg")
 				profile_list.append(temp_name)
 			file_name = dir.get_next()
 	else:

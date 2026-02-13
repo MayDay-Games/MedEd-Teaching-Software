@@ -29,7 +29,6 @@ script = ExtResource("1_wcnyh")
 oversampling_override = 1.0
 initial_position = 2
 size = Vector2i(300, 100)
-visible = true
 always_on_top = true
 min_size = Vector2i(300, 100)
 content_scale_aspect = 1
