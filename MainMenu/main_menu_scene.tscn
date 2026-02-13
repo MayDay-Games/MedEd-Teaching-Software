@@ -1,0 +1,476 @@
+[gd_scene format=3 uid="uid://4s5c75yjvjn1"]
+
+[ext_resource type="Script" uid="uid://2ubbqvu4txnd" path="res://MainMenu/main_menu_script.gd" id="1_wcnyh"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_f8v8e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcnyh"]
+bg_color = Color(0.3744, 0.50544, 0.52, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8v8e"]
+bg_color = Color(0.18479998, 0.26095998, 0.28, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2rhl"]
+bg_color = Color(0.18431373, 0.2627451, 0.2784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4qt7"]
+bg_color = Color(0.7921569, 0.6392157, 0.48235294, 1)
+
+[node name="MainMenuControl" type="Control" unique_id=561124930]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wcnyh")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=668297214]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundTexture" type="TextureRect" parent="." unique_id=661730471]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ImageTexture_f8v8e")
+
+[node name="Panel" type="Panel" parent="." unique_id=1412416893]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wcnyh")
+
+[node name="ButtonsMargin" type="MarginContainer" parent="." unique_id=1504308200]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = -100.5
+offset_right = 122.5
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="MenuButtons" type="VBoxContainer" parent="ButtonsMargin" unique_id=1972380948]
+layout_mode = 2
+
+[node name="Login" type="Button" parent="ButtonsMargin/MenuButtons" unique_id=1427643308]
+layout_mode = 2
+text = "Login
+"
+
+[node name="Guest" type="Button" parent="ButtonsMargin/MenuButtons" unique_id=170429631]
+layout_mode = 2
+text = "Guest"
+
+[node name="Exit" type="Button" parent="ButtonsMargin/MenuButtons" unique_id=707390141]
+layout_mode = 2
+text = "Exit"
+
+[node name="TitleMargin" type="MarginContainer" parent="." unique_id=1474312196]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.5
+offset_right = 70.5
+offset_bottom = 123.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="TitleLabel" type="RichTextLabel" parent="TitleMargin" unique_id=1323830671]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "MedEd"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ExitConfirmationPopup" type="PopupPanel" parent="." unique_id=1605702218]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(408, 258)
+
+[node name="ExitConfirmationCont" type="CenterContainer" parent="ExitConfirmationPopup" unique_id=1371511533]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 404.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="ExitConfirmationPopup/ExitConfirmationCont" unique_id=1104707299]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f8v8e")
+
+[node name="MarginContainer" type="MarginContainer" parent="ExitConfirmationPopup/ExitConfirmationCont/Panel" unique_id=1443651467]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExitConfirmationPopup/ExitConfirmationCont/Panel/MarginContainer" unique_id=889052118]
+layout_mode = 2
+
+[node name="CentreContainer" type="CenterContainer" parent="ExitConfirmationPopup/ExitConfirmationCont/Panel/MarginContainer/VBoxContainer" unique_id=1171131039]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ExitConfirmationPopup/ExitConfirmationCont/Panel/MarginContainer/VBoxContainer/CentreContainer" unique_id=24252908]
+layout_mode = 2
+text = "Are you sure you want to quit?"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExitConfirmationPopup/ExitConfirmationCont/Panel/MarginContainer/VBoxContainer" unique_id=556858803]
+layout_mode = 2
+alignment = 1
+
+[node name="Cancel" type="Button" parent="ExitConfirmationPopup/ExitConfirmationCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=484944349]
+layout_mode = 2
+text = "Cancel"
+
+[node name="MarginContainer" type="MarginContainer" parent="ExitConfirmationPopup/ExitConfirmationCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=166434152]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Quit" type="Button" parent="ExitConfirmationPopup/ExitConfirmationCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=505039709]
+layout_mode = 2
+text = "Quit"
+
+[node name="LoginPopup" type="PopupPanel" parent="." unique_id=1803974934]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(408, 558)
+
+[node name="LoginCont" type="CenterContainer" parent="LoginPopup" unique_id=1787831389]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 404.0
+offset_bottom = 554.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="LoginPopup/LoginCont" unique_id=3811173]
+custom_minimum_size = Vector2(400, 550)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2rhl")
+
+[node name="MarginContainer" type="MarginContainer" parent="LoginPopup/LoginCont/Panel" unique_id=1518264983]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoginPopup/LoginCont/Panel/MarginContainer" unique_id=2122673580]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer" unique_id=1766004785]
+layout_mode = 2
+text = "Select Profile"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer" unique_id=39752008]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ProfileList" type="ItemList" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=229941483]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+allow_rmb_select = true
+auto_height = true
+item_count = 2
+item_0/text = "TestProfile1"
+item_1/text = "TestProfile2"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer" unique_id=218756604]
+layout_mode = 2
+alignment = 1
+
+[node name="Cancel" type="Button" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1605493765]
+layout_mode = 2
+text = "Cancel"
+
+[node name="MarginContainer" type="MarginContainer" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2993516]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Delete" type="Button" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1585867064]
+layout_mode = 2
+text = "Delete"
+
+[node name="MarginContainer3" type="MarginContainer" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=831488924]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NewProfile" type="Button" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1233865129]
+layout_mode = 2
+text = "New Profile"
+
+[node name="MarginContainer2" type="MarginContainer" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1147598484]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Start" type="Button" parent="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1656244042]
+layout_mode = 2
+text = "Load"
+
+[node name="ButtonsMargin2" type="MarginContainer" parent="." unique_id=264252442]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.5
+offset_top = -131.0
+offset_right = 77.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Editor" type="Button" parent="ButtonsMargin2" unique_id=468685190]
+layout_mode = 2
+text = "Editor
+"
+
+[node name="NewProfilePop" type="PopupPanel" parent="." unique_id=1117048791]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(408, 558)
+
+[node name="LoginCont" type="CenterContainer" parent="NewProfilePop" unique_id=882854912]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 404.0
+offset_bottom = 554.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="NewProfilePop/LoginCont" unique_id=193997017]
+custom_minimum_size = Vector2(400, 550)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l2rhl")
+
+[node name="MarginContainer" type="MarginContainer" parent="NewProfilePop/LoginCont/Panel" unique_id=1929534183]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer" unique_id=119988277]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer" unique_id=2064562269]
+layout_mode = 2
+text = "Create New Profile"
+fit_content = true
+autowrap_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer" unique_id=2025326155]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="ProfileNameEntry" type="HBoxContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=225006396]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="ProfileNameEdit" type="LineEdit" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/ProfileNameEntry" unique_id=810613825]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Profile Name"
+backspace_deletes_composite_character_enabled = true
+caret_blink = true
+
+[node name="UsertypeEntry" type="HBoxContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=24219709]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="OptionLabel" type="RichTextLabel" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/UsertypeEntry" unique_id=449286757]
+layout_mode = 2
+text = "User Category"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/UsertypeEntry" unique_id=595664575]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TypeSelect" type="OptionButton" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/UsertypeEntry" unique_id=1449765599]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Medical Student"
+popup/item_0/id = 0
+popup/item_1/text = "Foundation Doctor"
+popup/item_1/id = 1
+popup/item_2/text = "Specialty Trainee +"
+popup/item_2/id = 2
+
+[node name="Option3" type="HBoxContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1576364179]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="OptionLabel" type="RichTextLabel" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/Option3" unique_id=1759876104]
+layout_mode = 2
+text = "Profile Name"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/Option3" unique_id=422265917]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/Option3" unique_id=1955087133]
+layout_mode = 2
+
+[node name="Option4" type="HBoxContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1946900320]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="OptionLabel" type="RichTextLabel" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/Option4" unique_id=1725113946]
+layout_mode = 2
+text = "Profile Name"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/Option4" unique_id=666429979]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/Option4" unique_id=494287832]
+layout_mode = 2
+
+[node name="Option5" type="HBoxContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1097748540]
+visible = false
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="OptionLabel" type="RichTextLabel" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/Option5" unique_id=1094308964]
+layout_mode = 2
+text = "Profile Name"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/Option5" unique_id=1462399586]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LineEdit" type="LineEdit" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/VBoxContainer/Option5" unique_id=487387988]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer" unique_id=88220301]
+layout_mode = 2
+alignment = 1
+
+[node name="Cancel" type="Button" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=64719873]
+layout_mode = 2
+text = "Cancel"
+
+[node name="MarginContainer2" type="MarginContainer" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=60409796]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Create" type="Button" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1778082131]
+layout_mode = 2
+text = "Create"
+
+[node name="WarningPop" type="PopupPanel" parent="." unique_id=835481104]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(300, 100)
+visible = true
+content_scale_aspect = 1
+
+[node name="Panel" type="Panel" parent="WarningPop" unique_id=935433102]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 296.0
+offset_bottom = 96.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_o4qt7")
+
+[node name="WarningText" type="RichTextLabel" parent="WarningPop/Panel" unique_id=1507059838]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "Enter profile name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ButtonsMargin/MenuButtons/Login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="ButtonsMargin/MenuButtons/Guest" to="." method="_on_guest_pressed"]
+[connection signal="pressed" from="ButtonsMargin/MenuButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ExitConfirmationPopup/ExitConfirmationCont/Panel/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_exitcancel_pressed"]
+[connection signal="pressed" from="ExitConfirmationPopup/ExitConfirmationCont/Panel/MarginContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="item_activated" from="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/ScrollContainer/ProfileList" to="." method="_on_profile_list_item_activated"]
+[connection signal="pressed" from="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_login_cancel_pressed"]
+[connection signal="pressed" from="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer/NewProfile" to="." method="_on_new_profile_pressed"]
+[connection signal="pressed" from="LoginPopup/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_create_cancel_pressed"]
+[connection signal="pressed" from="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer/Create" to="." method="_on_profile_create_pressed"]

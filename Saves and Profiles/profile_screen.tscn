@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://tmj3hhbpmhkj"]
+
+[ext_resource type="Script" uid="uid://bfk1kxd4u3hfp" path="res://profile_screen.gd" id="1_3q6cw"]
+
+[node name="ProfileScreen" type="Control" unique_id=1019412064]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3q6cw")
+
+[node name="NinePatchRect" type="Panel" parent="." unique_id=1259714957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect" unique_id=1614313885]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer" unique_id=1363366769]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=1222732488]
+layout_mode = 2
+text = "Select Profile"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer" unique_id=1984856005]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=814723239]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProfileList" type="ItemList" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer" unique_id=2081073854]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1243667071]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="NewProfile" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=570799013]
+layout_mode = 2
+text = "Create New Profile"
+
+[node name="OpenEditor" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=481022547]
+layout_mode = 2
+text = "Open Editor"
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=472085869]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SelectProfile" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=798363253]
+layout_mode = 2
+text = "Load Profile"
+
+[node name="Quit" type="Button" parent="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1054689723]
+layout_mode = 2
+text = "Quit"
+
+[node name="PasswordPop" type="PopupPanel" parent="." unique_id=1553921720]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(400, 150)
+
+[node name="CenterContainer" type="CenterContainer" parent="PasswordPop" unique_id=1165085501]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 396.0
+offset_bottom = 146.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PasswordPop/CenterContainer" unique_id=1848211729]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PasswordTextfield" type="TextEdit" parent="PasswordPop/CenterContainer/VBoxContainer" unique_id=958154525]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+placeholder_text = "Enter Password"
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PasswordPop/CenterContainer/VBoxContainer" unique_id=1937274667]
+layout_mode = 2
+
+[node name="PasswordCancel" type="Button" parent="PasswordPop/CenterContainer/VBoxContainer/HBoxContainer" unique_id=20842150]
+layout_mode = 2
+text = "Cancel"
+
+[node name="MarginContainer" type="MarginContainer" parent="PasswordPop/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1630031380]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PasswordEnter" type="Button" parent="PasswordPop/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1999798560]
+layout_mode = 2
+text = "Confirm"
+
+[node name="NewProfilePop" type="PopupPanel" parent="." unique_id=890704985]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(400, 200)
+
+[node name="CenterContainer" type="CenterContainer" parent="NewProfilePop" unique_id=1416206031]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 396.0
+offset_bottom = 196.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NewProfilePop/CenterContainer" unique_id=759274419]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="UsernameTextfield" type="TextEdit" parent="NewProfilePop/CenterContainer/VBoxContainer" unique_id=677844396]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+placeholder_text = "Enter Username"
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="PasswordTextfield" type="TextEdit" parent="NewProfilePop/CenterContainer/VBoxContainer" unique_id=722655055]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+placeholder_text = "Enter Password"
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NewProfilePop/CenterContainer/VBoxContainer" unique_id=109669453]
+layout_mode = 2
+
+[node name="NewPCancel" type="Button" parent="NewProfilePop/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1966389068]
+layout_mode = 2
+text = "Cancel"
+
+[node name="MarginContainer" type="MarginContainer" parent="NewProfilePop/CenterContainer/VBoxContainer/HBoxContainer" unique_id=1372222428]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NewPEnter" type="Button" parent="NewProfilePop/CenterContainer/VBoxContainer/HBoxContainer" unique_id=2074048662]
+layout_mode = 2
+text = "Confirm"
+
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/NewProfile" to="." method="_on_new_profile_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/OpenEditor" to="." method="_on_open_editor_pressed"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="NewProfilePop/CenterContainer/VBoxContainer/HBoxContainer/NewPCancel" to="." method="_on_new_p_cancel_pressed"]
+[connection signal="pressed" from="NewProfilePop/CenterContainer/VBoxContainer/HBoxContainer/NewPEnter" to="." method="_on_new_p_enter_pressed"]

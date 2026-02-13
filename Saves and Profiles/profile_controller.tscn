@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dx45jy8ds2jkj"]
+
+[ext_resource type="Script" uid="uid://b2fiy48xcmc4m" path="res://Saves and Profiles/profile_controller.gd" id="1_xrweu"]
+
+[node name="ProfileController" type="Node" unique_id=1647936970]
+script = ExtResource("1_xrweu")
