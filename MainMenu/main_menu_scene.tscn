@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://2ubbqvu4txnd" path="res://MainMenu/main_menu_script.gd" id="1_wcnyh"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4qt7"]
+bg_color = Color(0.7921569, 0.6392157, 0.48235294, 1)
+
 [sub_resource type="ImageTexture" id="ImageTexture_f8v8e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcnyh"]
@@ -13,9 +16,6 @@ bg_color = Color(0.18479998, 0.26095998, 0.28, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2rhl"]
 bg_color = Color(0.18431373, 0.2627451, 0.2784314, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4qt7"]
-bg_color = Color(0.7921569, 0.6392157, 0.48235294, 1)
-
 [node name="MainMenuControl" type="Control" unique_id=561124930]
 layout_mode = 3
 anchors_preset = 15
@@ -24,6 +24,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wcnyh")
+
+[node name="WarningPop" type="PopupPanel" parent="." unique_id=411120664]
+oversampling_override = 1.0
+initial_position = 2
+size = Vector2i(300, 100)
+visible = true
+always_on_top = true
+min_size = Vector2i(300, 100)
+content_scale_aspect = 1
+
+[node name="Panel" type="Panel" parent="WarningPop" unique_id=935433102]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 296.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o4qt7")
+
+[node name="WarningText" type="RichTextLabel" parent="WarningPop/Panel" unique_id=1507059838]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "Enter profile name"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=668297214]
 layout_mode = 1
@@ -436,32 +466,6 @@ size_flags_horizontal = 3
 [node name="Create" type="Button" parent="NewProfilePop/LoginCont/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1778082131]
 layout_mode = 2
 text = "Create"
-
-[node name="WarningPop" type="PopupPanel" parent="." unique_id=835481104]
-oversampling_override = 1.0
-initial_position = 2
-size = Vector2i(300, 100)
-visible = true
-content_scale_aspect = 1
-
-[node name="Panel" type="Panel" parent="WarningPop" unique_id=935433102]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 296.0
-offset_bottom = 96.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_o4qt7")
-
-[node name="WarningText" type="RichTextLabel" parent="WarningPop/Panel" unique_id=1507059838]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-text = "Enter profile name"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="ButtonsMargin/MenuButtons/Login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="ButtonsMargin/MenuButtons/Guest" to="." method="_on_guest_pressed"]

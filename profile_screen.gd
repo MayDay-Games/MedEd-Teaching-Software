@@ -2,9 +2,19 @@ extends Control
 
 @onready var password_pop = $PasswordPop
 @onready var new_profile_pop = $NewProfilePop
+@onready var list = $NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/ProfileList
+
+var profile_name = ""
 
 signal new_profile
 
+func _ready() -> void:
+	ProfileController.connect("profile_changed", change_profile)
+
+func change_profile():
+	print("changing profile")
+	profile_name = ProfileController.active_profile
+	list.add_item(profile_name)
 
 func _on_new_profile_pressed() -> void:
 	new_profile_pop.show()
