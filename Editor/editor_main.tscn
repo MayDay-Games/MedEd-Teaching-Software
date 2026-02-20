@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://bvc05wndm5lya"]
+
+[ext_resource type="Script" uid="uid://cas62dehugor3" path="res://Editor/editor_main.gd" id="1_hr7ek"]
+[ext_resource type="PackedScene" uid="uid://dqf653jpra3wy" path="res://MainMenu/module_panel.tscn" id="2_wg8f4"]
+[ext_resource type="PackedScene" uid="uid://ef6yrqwbt0mr" path="res://MainMenu/settings_menu.tscn" id="3_5hjqn"]
+[ext_resource type="Script" uid="uid://c81rm2andsxo4" path="res://Editor/module_edit_pop.gd" id="4_nh2ca"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efacp"]
+bg_color = Color(0.20655426, 0.2065543, 0.20655417, 1)
+
+[node name="EditorMain" type="Control" unique_id=2125279911]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hr7ek")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=981518413]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1391301889]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1183154278]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=710512524]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1107781535]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Back
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1984398103]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EscButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=527804657]
+layout_mode = 2
+text = "Esc"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer" unique_id=799470488]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer" unique_id=159101832]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" unique_id=655497471]
+layout_mode = 2
+text = "Select a one of the modules below to edit or create a new module:"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer" unique_id=933151560]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=504670176]
+custom_minimum_size = Vector2(820, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer" unique_id=2144651948]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer" unique_id=1710112975]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="OddVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1109895719]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="ModulePanel" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=394583697 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ModulePanel3" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=1111382794 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ModulePanel4" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=316105524 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ModulePanel5" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=142708555 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ModulePanel6" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=1376049717 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ModulePanel7" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/OddVbox" unique_id=1800744196 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="EvenVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer" unique_id=1038462490]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+
+[node name="ModulePanel" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=232908824 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ModulePanel2" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=599924207 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ModulePanel3" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=283055173 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ModulePanel4" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=1198327468 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ModulePanel5" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ScrollContainer/MarginContainer/HBoxContainer/EvenVbox" unique_id=1801991505 instance=ExtResource("2_wg8f4")]
+layout_mode = 2
+
+[node name="ButtonVbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer" unique_id=390762827]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="NewMod" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ButtonVbox" unique_id=2139141741]
+layout_mode = 2
+text = "Create Module"
+
+[node name="Rename" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ButtonVbox" unique_id=790890682]
+layout_mode = 2
+text = "Edit Module Card"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ButtonVbox" unique_id=986287426]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ContEdit" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ButtonVbox" unique_id=1110668618]
+layout_mode = 2
+text = "Edit Module"
+
+[node name="SettingsMenu" parent="MarginContainer/VBoxContainer/CenterContainer" unique_id=219315174 instance=ExtResource("3_5hjqn")]
+visible = false
+layout_mode = 2
+
+[node name="LabelContainer" type="CenterContainer" parent="." unique_id=2048009807]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="LabelContainer" unique_id=1532920291]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "MedEd - Editor"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ModuleEditPop" type="CenterContainer" parent="." unique_id=1035652241]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_nh2ca")
+
+[node name="PanelContainer" type="Panel" parent="ModuleEditPop" unique_id=1008814504]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_efacp")
+
+[node name="MarginContainer" type="MarginContainer" parent="ModuleEditPop/PanelContainer" unique_id=1730980046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModuleEditPop/PanelContainer/MarginContainer" unique_id=798321245]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="WindowTitle" type="RichTextLabel" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer" unique_id=839421625]
+layout_mode = 2
+text = "New Module"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer" unique_id=1914892418]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer" unique_id=1813644915]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=61543391]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="TitleEdit" type="LineEdit" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1306448030]
+layout_mode = 2
+placeholder_text = "Enter Module Name"
+
+[node name="DescriptionEdit" type="TextEdit" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=42201842]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+placeholder_text = "Enter Module Description"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer" unique_id=2125245755]
+layout_mode = 2
+
+[node name="Cancel" type="Button" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1706034966]
+layout_mode = 2
+text = "Cancel"
+
+[node name="MarginContainer" type="MarginContainer" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1407772872]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1444748268]
+layout_mode = 2
+text = "Create"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ModuleEditPop/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="ModuleEditPop" method="_on_cancel_pressed"]

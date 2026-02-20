@@ -1,20 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cn6jvity8ksnu"]
+[gd_scene format=3 uid="uid://cn6jvity8ksnu"]
 
-[ext_resource type="Script" uid="uid://bj1qat2onughr" path="res://Modules/slide_view_module.gd" id="1_5wawv"]
+[ext_resource type="Script" uid="uid://bj1qat2onughr" path="res://Modules/slide_view_element.gd" id="1_m8d7u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogusu"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="SlideViewModule" type="Control"]
+[node name="SlideViewElement" type="Control" unique_id=1139794279]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5wawv")
+script = ExtResource("1_m8d7u")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=646385537]
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 1
 anchors_preset = 15
@@ -24,18 +24,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ogusu")
 
-[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=1076297976]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer" unique_id=486260673]
 layout_mode = 2
 stretch_mode = 2
 
-[node name="ControlsCont" type="MarginContainer" parent="."]
+[node name="ControlsCont" type="MarginContainer" parent="." unique_id=403021604]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,13 +47,13 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 30
 
-[node name="Panel" type="Panel" parent="ControlsCont"]
+[node name="Panel" type="Panel" parent="ControlsCont" unique_id=1035583594]
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ControlsCont/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlsCont/Panel" unique_id=538244651]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,42 +64,42 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 theme_override_constants/separation = 0
 
-[node name="LeftBar" type="VBoxContainer" parent="ControlsCont/Panel/HBoxContainer"]
+[node name="LeftBar" type="VBoxContainer" parent="ControlsCont/Panel/HBoxContainer" unique_id=1800296076]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="LeftButton" type="Button" parent="ControlsCont/Panel/HBoxContainer/LeftBar"]
+[node name="LeftButton" type="Button" parent="ControlsCont/Panel/HBoxContainer/LeftBar" unique_id=733608196]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 text = "<"
 
-[node name="CentreBar" type="VBoxContainer" parent="ControlsCont/Panel/HBoxContainer"]
+[node name="CentreBar" type="VBoxContainer" parent="ControlsCont/Panel/HBoxContainer" unique_id=1540134558]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="UpButton" type="Button" parent="ControlsCont/Panel/HBoxContainer/CentreBar"]
+[node name="UpButton" type="Button" parent="ControlsCont/Panel/HBoxContainer/CentreBar" unique_id=810452614]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 text = "^"
 
-[node name="MarginContainer" type="MarginContainer" parent="ControlsCont/Panel/HBoxContainer/CentreBar"]
+[node name="MarginContainer" type="MarginContainer" parent="ControlsCont/Panel/HBoxContainer/CentreBar" unique_id=2112547749]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="DownButton" type="Button" parent="ControlsCont/Panel/HBoxContainer/CentreBar"]
+[node name="DownButton" type="Button" parent="ControlsCont/Panel/HBoxContainer/CentreBar" unique_id=1764171707]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 text = "v"
 
-[node name="RightBar" type="VBoxContainer" parent="ControlsCont/Panel/HBoxContainer"]
+[node name="RightBar" type="VBoxContainer" parent="ControlsCont/Panel/HBoxContainer" unique_id=750668818]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="RightButton" type="Button" parent="ControlsCont/Panel/HBoxContainer/RightBar"]
+[node name="RightButton" type="Button" parent="ControlsCont/Panel/HBoxContainer/RightBar" unique_id=646639407]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 text = ">"
